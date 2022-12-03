@@ -1,0 +1,107 @@
+[
+    {
+        "id": "b1eafc2904b579fc",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6e3c5ef424511c78",
+        "type": "http in",
+        "z": "b1eafc2904b579fc",
+        "name": "",
+        "url": "/motion-data",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "3638d50f09acba00",
+                "daeb1c8dc6444b72",
+                "19214df16106234c"
+            ]
+        ]
+    },
+    {
+        "id": "daeb1c8dc6444b72",
+        "type": "http response",
+        "z": "b1eafc2904b579fc",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "19214df16106234c",
+        "type": "debug",
+        "z": "b1eafc2904b579fc",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3638d50f09acba00",
+        "type": "file",
+        "z": "b1eafc2904b579fc",
+        "name": "",
+        "filename": "https://github.com/rsanku01/SEAS/motion.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "daeb1c8dc6444b72"
+            ]
+        ]
+    },
+    {
+        "id": "854eaf941a2ae8b5",
+        "type": "status",
+        "z": "b1eafc2904b579fc",
+        "name": "",
+        "scope": null,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "2df0c5d4b1fdd58d"
+            ]
+        ]
+    },
+    {
+        "id": "2df0c5d4b1fdd58d",
+        "type": "file",
+        "z": "b1eafc2904b579fc",
+        "name": "",
+        "filename": "C:\\Users\\ankur\\Desktop\\SEAS 4.0\\INTERNSHIP_THESIS\\Stability\\status.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 590,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    }
+]
